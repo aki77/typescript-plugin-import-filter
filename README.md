@@ -18,8 +18,8 @@ Then add this plugin in `tsconfig.json`.
       {
         "name": "typescript-plugin-import-filter",
         "excludes": [
-          { "module": "@vue/runtime-com" },
-          { "module": "@vue/reactivity" },
+          { "module": "@chakra-ui/react", "name": "Icon" },
+          { "module": "@chakra-ui/icon" },
           { "module": "timers", "name": "setTimeout" },
         ]
       }
