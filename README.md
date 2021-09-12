@@ -2,6 +2,10 @@
 
 Exclude specific modules from auto import in typescript.
 
+## Motivation
+
+[Exclude specific files from auto import suggestions · Issue \#35395 · microsoft/TypeScript](https://github.com/microsoft/TypeScript/issues/35395)
+
 ## Installation
 
 ```
