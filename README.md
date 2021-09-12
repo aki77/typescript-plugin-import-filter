@@ -28,4 +28,4 @@ Then add this plugin in `tsconfig.json`.
 }
 ```
 
-Refer to the [type definitions](https://link) for more options.
+Refer to the [type definitions](https://github.com/aki77/typescript-plugin-import-filter/blob/2862e0d2137a4e8ae5f9f9fc49f790819152760d/src/index.ts#L3-L10) for more options.
