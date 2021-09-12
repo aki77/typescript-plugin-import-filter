@@ -1,7 +1,7 @@
 {
   "name": "typescript-plugin-import-filter",
   "description": "Exclude specific modules from auto import in typescript.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
@@ -21,9 +21,11 @@
   },
   "license": "MIT",
   "dependencies": {
+    "micromatch": "^4.0.4",
     "typescript": "^4.4.3"
   },
   "devDependencies": {
+    "@types/micromatch": "^4.0.2",
     "@types/node": "^14"
   },
   "files": [

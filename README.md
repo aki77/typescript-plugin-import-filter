@@ -18,9 +18,17 @@ Then add this plugin in `tsconfig.json`.
       {
         "name": "typescript-plugin-import-filter",
         "excludes": [
-          { "module": "@chakra-ui/react", "name": "Icon" },
-          { "module": "@chakra-ui/icon" },
-          { "module": "timers", "name": "setTimeout" },
+          {
+            "name": "Icon",
+            "module": "@chakra-ui/**/*"
+          },
+          {
+            "name": "setTimeout",
+            "module": "timers"
+          },
+          {
+            "module": "@chakra-ui/icon"
+          }
         ]
       }
     ]

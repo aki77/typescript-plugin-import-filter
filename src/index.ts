@@ -1,4 +1,5 @@
 import ts from 'typescript/lib/tsserverlibrary';
+import micromatch from 'micromatch'
 
 type ExcludeOption = {
   module: string
@@ -16,12 +17,12 @@ const isExcludeImport = (imp: string, excludes: readonly ExcludeOption[]): boole
   if (!matches) return false;
   const [, name, module] = matches;
 
-  return isExcludeModule({ excludes, name, module })
+  return isMatchExclude({ excludes, name, module })
 }
 
-const isExcludeModule = ({ excludes, module, name }: { excludes: readonly ExcludeOption[], module: string, name: string }): boolean => {
+const isMatchExclude = ({ excludes, module, name }: { excludes: readonly ExcludeOption[], module: string, name: string }): boolean => {
   return excludes.some((exclude) => {
-    return module.startsWith(exclude.module) && (!exclude.name || exclude.name === name)
+    return micromatch.isMatch(module, exclude.module) && (!exclude.name || micromatch.isMatch(name, exclude.name))
   })
 }
 
@@ -46,7 +47,7 @@ function init() {
       const entries = original.entries.filter((entry) => {
         if (!entry.data?.moduleSpecifier || !entry.data.exportName) return true
 
-        return !isExcludeModule({ excludes: config.excludes, name: entry.data.exportName, module: entry.data.moduleSpecifier  })
+        return !isMatchExclude({ excludes: config.excludes, name: entry.data.exportName, module: entry.data.moduleSpecifier  })
       });
       original.entries = entries;
       return original;
