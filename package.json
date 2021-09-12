@@ -1,0 +1,29 @@
+{
+  "name": "typescript-plugin-import-filter",
+  "description": "Exclude specific modules from auto import in typescript.",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "aki77",
+  "keywords": [
+    "typescript",
+    "auto-import"
+  ],
+  "homepage": "https://github.com/aki77/typescript-plugin-import-filter#readme",
+  "bugs": {
+    "url": "https://github.com/aki77/typescript-plugin-import-filter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aki77/typescript-plugin-import-filter.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^14"
+  }
+}
